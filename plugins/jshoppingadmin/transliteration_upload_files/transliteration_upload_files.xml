@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="jshoppingadmin" method="upgrade">
+	<name>JoomShopping - Transliteration Upload Files</name>
+	<author>Nevigen.com</author>
+	<creationDate>April, 2014</creationDate>
+	<copyright>Copyright © Nevigen.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@nevigen.com</authorEmail>
+	<authorUrl>http://nevigen.com/</authorUrl>
+    <version>3.70.1.1</version>
+	<description><![CDATA[Developed & Powered by <a href="http://nevigen.com/" target="_blank">Nevigen.com</a>]]></description>
+	<files>
+		<filename plugin="transliteration_upload_files">transliteration_upload_files.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="image"
+					type="radio"
+					default="1"
+					label="Transliteration image`s name"
+					description="">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="video"
+					type="radio"
+					default="1"
+					label="Transliteration video`s name"
+					description="">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="file"
+					type="radio"
+					default="1"
+					label="Transliteration file`s name"
+					description="">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

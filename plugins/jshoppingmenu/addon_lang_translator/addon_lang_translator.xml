@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.7" method="upgrade" group="jshoppingmenu">
+    <name>Joomshopping language pack editor</name>
+    <creationDate>19.08.2013</creationDate>
+    <version>1.0.0</version>
+    <author>MAXXmarketing GmbH</author>
+    <authorEmail>marketing@maxx-marketing.net</authorEmail>
+    <authorUrl>http://www.webdesigner-profi.de</authorUrl>
+    <copyright></copyright>
+    <license>2012. MAXXmarketing GmbH. All rights reserved.</license>
+    <description>Joomshopping language pack editor</description> 
+    <files>
+        <filename plugin="addon_lang_translator">addon_lang_translator.php</filename>
+    </files>
+</extension>

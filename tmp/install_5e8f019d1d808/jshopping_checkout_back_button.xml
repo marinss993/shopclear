@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" method="upgrade" group="jshoppingcheckout">
+    <name>JoomShopping - Checkout Back Button</name>
+    <creationDate>19.12.2017</creationDate>
+    <author>MAXXmarketing GmbH</author>
+    <authorEmail>marketing@maxx-marketing.net</authorEmail>
+    <authorUrl>http://www.webdesigner-profi.de</authorUrl>
+    <copyright>Copyright (C) 2010 webdesigner-profi.de. All rights reserved.</copyright>
+    <license>Open Source License, GNU/GPL</license>
+    <version>1.0.3</version>
+    <description>JoomShopping - Checkout Back Button plugin</description>
+    <files>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename plugin="jshopping_checkout_back_button">jshopping_checkout_back_button.php</filename>
+    </files>
+	<config>
+		<fields name="params">
+			<fieldset name="output_positions" label="PLG_JSHOPPING_CHECKOUT_BACK_BUTTON_OUTPUT_POSITIONS">
+				<field
+                    name="output_positions_step_2"
+					type="text"
+					default="_tmpl_address_html_9"
+					label="PLG_JSHOPPING_CHECKOUT_BACK_BUTTON_STEP_2"
+				/>
+				<field
+                    name="output_positions_step_3"
+					type="text"
+					default="_tmp_ext_html_payment_end"
+					label="PLG_JSHOPPING_CHECKOUT_BACK_BUTTON_STEP_3"
+				/>
+				<field
+                    name="output_positions_step_4"
+					type="text"
+					default="_tmp_ext_html_shipping_end"
+					label="PLG_JSHOPPING_CHECKOUT_BACK_BUTTON_STEP_4"
+				/>
+				<field
+                    name="output_positions_step_5"
+					type="text"
+					default="_tmp_ext_html_previewfinish_before_button"
+					label="PLG_JSHOPPING_CHECKOUT_BACK_BUTTON_STEP_5"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

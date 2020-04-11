@@ -1,0 +1,5090 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JoomShopping API Documentation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALR69MC0evbgtHr3jLR69+S0evfktHr3yLR69wi0evSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtHr0ELR69lC0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69vAAAAAAAAAAAAAAAAAAAAAAtHr0ELR69xS0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3kAAAAAAAAAAAAAAAALR69iy0evf8tHr3QLR69hy0eveUtHr3tLR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evb4AAAAALR69Ji0evf8tHr3/LR69nwAAAAAAAAAALR69Ai0evU4tHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69JS0eva0tHr3/LR69/y0evf0tHr0FAAAAAAAAAAAAAAAALR69fi0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evcMtHr3aLR69/y0evf8tHr37LR69EAAAAAAAAAAALR69Gi0evR4tHr3+LR69/y0evf8tHr3/LR69/y0evf8tHr3yLR69+S0evf8tHr3/LR69/y0evZQAAAAALR69Ei0evfstHr3sLR69zS0evXEtHr3/LR69/y0evf8tHr3/LR69+S0evfktHr3/LR69/y0evf8tHr3/LR69vy0evXEtHr3JLR696y0evQ8AAAAALR69Ti0evf8tHr3/LR69/y0evfktHr3mLR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69zi0evQ8AAAAAAAAAAC0evQktHr3zLR69/y0evf8tHr3jLR69oi0evf8tHr3/LR69/y0evf8tHr3/LR69/y0eva0AAAAAAAAAAAAAAAAAAAAALR696C0evf8tHr3/LR69uS0evRUtHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69li0evRQtHr0EAAAAAC0evaYtHr3/LR69/y0evS4AAAAALR69oC0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evbktHr3cLR69/y0evZIAAAAAAAAAAAAAAAAtHr3QLR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evcUtHr0EAAAAAAAAAAAAAAAAAAAAAC0evaEtHr3/LR69/y0evf8tHr3/LR69/y0evf8tHr3/LR69/y0evYstHr0EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALR69Fi0evaEtHr3mLR69+S0evfgtHr3aLR69rC0evSgAAAAAAAAAAAAAAAAAAAAA+B8AAOAHAADAAwAAgAEAAI8BAAAPgAAAD4AAAAYgAAACcAAAAPAAAADwAACAcQAAgAEAAMADAADgBwAA+B8AAA==" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+        <style>
+            /*
+* @version      1.0.3 01.11.2018
+* @author       MAXXmarketing GmbH
+* @package      addon_api
+* @copyright    Copyright (C) 2010 webdesigner-profi.de. All rights reserved.
+* @license      GNU/GPL
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+body {
+    max-width: 1130px;
+    margin: 0 auto;
+    line-height: 1.5rem;
+    box-shadow: 0 0 10px 0 #EEEEEE;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #0000EE;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+code {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border: 1px solid #EEEEEE;
+    background: #F7F7F7;
+    white-space: pre;
+    overflow: auto;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+li {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table tr:hover {
+    background: #F7F7F7;
+}
+
+table th {
+    background: #EEEFFF;
+}
+
+table th,
+table td {
+    padding: 5px 10px;
+}
+
+table th,
+table td {
+    border: 1px solid #EEEEEE;
+}
+
+[hidden] {
+    display: none;
+}
+
+body > header h1.column {
+    display: block;
+    margin-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: #EEEFFF;
+    color: #BD1E2D;
+}
+
+body > header h1.column span {
+    vertical-align: sub;
+}
+
+main {
+    position: relative; /* for menu */
+}
+
+main > * {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+}
+
+main > *:first-child {
+    width: 25%;
+    padding-right: 25px;
+}
+
+main menu {
+    position: fixed;
+}
+
+main menu ul ul {
+    margin-left: 1.5rem;
+}
+
+main menu ul li a {
+    display:inline-block;
+    max-width: 175px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1.25rem;
+}
+
+main menu a:hover,
+main menu .active > a {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+section section {
+    margin-bottom: 50px;
+}
+
+section section:last-of-type {
+    margin-bottom: 0;
+}
+
+section > div > *:last-child {
+    margin-bottom: 0;
+}
+
+section header {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+section section header {
+    font-size: 1.25rem;
+}
+
+section#version_history ul > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+section#version_history .version_and_date > * {
+    display: inline-block;
+    font-weight: bold;
+}
+
+section#version_history .changes {
+    list-style: disc inside;
+}
+
+section#version_history .changes li {
+    display: list-item;
+}
+
+section#request_parameters table {
+    text-align: center;
+}
+
+section#sections_and_tasks > div > table,
+section#sections_and_tasks section > table {
+    text-align: center;
+}
+
+section#sections_and_tasks table,
+section#sections_and_tasks section {
+    margin: 0;
+}
+
+section#sections_and_tasks > div > table > thead > tr > th:first-child,
+section#sections_and_tasks > div > section > table > tbody > tr > td:first-child {
+    width: 25%;
+}
+
+section#sections_and_tasks > div > table > thead > tr > th:nth-child(2),
+section#sections_and_tasks > div > section > table > tbody > tr > td:nth-child(2) {
+    width: 50%;
+    padding: 0;
+}
+
+section#sections_and_tasks .args {
+    margin: 0;
+}
+
+section#sections_and_tasks th .args tr:first-child th {
+    padding-bottom: 0;
+}
+
+section#sections_and_tasks .args th:first-child,
+section#sections_and_tasks .args td:first-child {
+    border-left: none;
+}
+
+section#sections_and_tasks .args th:last-child,
+section#sections_and_tasks .args td:last-child {
+    border-right: none;
+}
+
+section#sections_and_tasks .args tr:first-child th,
+section#sections_and_tasks .args tr:first-child td {
+    border-top: none;
+}
+
+section#sections_and_tasks .args tr:last-child th,
+section#sections_and_tasks .args tr:last-child td {
+    border-bottom: none;
+}
+
+section#sections_and_tasks table .details-btn {
+    cursor: pointer;
+}
+
+section#sections_and_tasks table .details-btn:hover {
+    color: #0000EE;
+}
+
+section#sections_and_tasks table .details-btn:before {
+    content: '▼';
+}
+
+section#sections_and_tasks table .details-btn.open:before {
+    content: '▲';
+}
+
+section#sections_and_tasks table .details {
+    display: none;
+    background: #FCFCFC;
+}
+
+section#sections_and_tasks table .details td {
+    padding: 25px;
+}
+
+section#sections_and_tasks table .details section {
+    margin-bottom: 20px;
+}
+
+section#sections_and_tasks table .details section .description table {
+    margin-top: 15px;
+}
+
+section#sections_and_tasks table .details section .description table:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+section#sections_and_tasks table .details section .description table td {
+    padding: 5px 10px;
+}
+
+section#formats table td:first-child,
+section#reports table td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    background: #EEEFFF;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.args th:nth-child(2),
+.args td:nth-child(2) {
+    width: 30%;
+}
+
+.args th:nth-child(3),
+.args td:nth-child(3) {
+    width: 16%;
+}
+
+.datatype {
+    font-style: italic;
+}
+
+.column {
+    padding: 0 25px;
+}
+
+.non-bordered tr,
+.non-bordered th,
+.non-bordered td {
+    border: none;
+}
+
+.red {
+    color: red;
+}
+
+.variable {
+    font-weight: bold;
+}        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            /*
+* @version      1.0.1 23.02.2018
+* @author       MAXXmarketing GmbH
+* @package      addon_api
+* @copyright    Copyright (C) 2010 webdesigner-profi.de. All rights reserved.
+* @license      GNU/GPL
+*/
+
+jQuery(document).ready(function($) {
+    window.onscroll  = function() {
+        var scroll   = window.pageYOffset || document.documentElement.scrollTop,
+            main_top = $('main').offset().top;
+        $('menu').css(
+            {
+                top: (scroll > main_top ? 10 : (main_top - scroll)) + 'px'
+            }
+        );
+        clearTimeout($.data(this, 'scrollCheck'));
+        $.data(
+            this,
+            'scrollCheck',
+            setTimeout(
+                function() {
+                    var section_id = '',
+                        sections   = $('section');
+                    sections.each(function(i, el) {
+                        var id = $(el).attr('id');
+                        if (
+                            typeof id !== "undefined" &&
+                            scroll > $(el).offset().top - 1
+                        ) {
+                            section_id = id;
+                            $('menu a[href=\'#' + id  + '\']').click();
+                            return;
+                        }
+                    });
+                    if (!section_id.length) {
+                        $('menu a[href=\'#' + sections.first().attr('id')  + '\']').click();
+                    }
+                },
+                250
+            )
+        );
+    };
+    window.onscroll();
+    $('menu a').click(function() {
+        $('menu li.active').removeClass('active');
+        $(this).parents('li').addClass('active');
+    });
+    $('menu a[href=\'' + window.location.hash  + '\']').click();
+    $('.details-btn').click(function() {
+        var el = $(this);
+        el.hasClass('open')
+        ? el.toggleClass('open close').closest('tr').next('.details').hide()
+        : el.addClass('open').closest('tr').next('.details').show()
+    });
+});        </script>
+    </head>
+    <body>
+        <header>
+            <h1 class="column">
+                <img src="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM3MThDQzMxQjQwRDExRTc5QTM3QkE4QUYxQUY0QjRGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM3MThDQzMyQjQwRDExRTc5QTM3QkE4QUYxQUY0QjRGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzcxOENDMkZCNDBEMTFFNzlBMzdCQThBRjFBRjRCNEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzcxOENDMzBCNDBEMTFFNzlBMzdCQThBRjFBRjRCNEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7DA5qVAAAD1klEQVR42ryZaUgUYRjH13HNxKKT0g5Jii4x0w9JVlAfsjuMsouKioooIuywi4IgBDssMogM+hCkVtBlUikWUdFhht2RH7oPUzKzsEOr/wP/gWGbcd7ZnfWBHzvuPDv73/d9n+N9DSmLiff4YZ3BIDAYJIMhoAcI4/0mUA0eg1vgCal2+kVeh/7ya6aACWCkja8ITgTz+Pc9UAyKQLnbAnuCtWAa6OPxz5LIMnAO5IBndh/SFB48E1wGGQGIM1p3sBSU8tVvgW1BFigE/T3uWy+QRzo4FSgfOAQ2gRBPcE1G8ThHVklgBNgPFnhaz8aBo8wOtgK3tLI43VLBPt8Z8xU4HWwOoohX4C34AZpN7s8Hq6wERoNsl9fcX8O1pJYxHKlFIBPUW8xgvFkeXA/6uiTsHdjB0Qrle1fBF14/ZRSvNongbmAjl1mzLjCO+c4N+wgWgxIbv58UHGNyTwpCCrimT/FUVotA7RNLW4mCbw14bXEvgvEQqjG0J7kg7gOnpUzRf65NPZ8h9Vzj9Ka4IFBK1yVF3yhmi4429T9OBA50KXLHglGKvu0U+4DxGvs5N0zSVAEYoeArAfJLwS9ZBCa4IO4guMhpKVDoFaUR6aTw3C4aG0un1gAqOQqS71aAl7zXmx2Qlcg2YJ1FevlvKXj96Kolzy0Bd0E/Cs1idTAucOlQZoHrPpUrh02rioVqDsXVMM8Vc39xAwwFG0C4SctfaAgcmdZcsNJJqdQsirZVoZ9jkufK2Tf+NrxXBa4wcPLBGnCES8FRLfdyyqJtHGWXts0iCcs63MnrbP6QySAWDGfN3eNn8H33cmuYaOcIntv47AJ14A5nJctk2p1ancZ9q52FKHyZtFaHOYL53MEFWgAqNLY+dhaumPnFGsEjl5J/scYprrRxvAAeOmhS27sgrlZ+qMZ0UdSC4332d7UKD5Xn7WWrFKidAW/0aTvbgoAGnxTS0jLIZSrRAhQnWeOEvOoPqgCnLJwHsCXztTCK8jIp5/iR56zsvF6BjGVuNzvrKN9ywzUVyXQjNhss5Eg1cdOd5JK4eubVRl+BVUzGeSZHbfLeV0Z8DddkZJC2pgfATavTLcljw9gMGC2Wrwme4JoE63a7k4VMB627mybd0XLfgDQTWMf1VdqK4m5z2/te9XRLGoh0HugE2yTFpYEXTo7f9GiSkczgltJt+8xuPJ0D4nEqUC9bcuI0ERxj0g7UZMN0mqcHW+2KgGq7X8lOejQfnKa4pzCaXlJPsq9UapRD/Pw3RAyrSyq3rV0Ne11psf6Abwy4Cu74HvCoo9nJF/0TYABw2cxy3P5/jQAAAABJRU5ErkJggg==" />
+                <span>JoomShopping API Documentation</span>
+            </h1>
+        </header>
+		<main class="column">
+            <div>
+                <menu>
+                    <ul>
+                        <li>
+                            <a href="#summary" title="Summary">Summary</a>
+                        </li>
+                        <li>
+                            <a href="#introduction" title="Introduction">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#technical_requirements" title="Technical requirements">Technical requirements</a>
+                        </li>
+                        <li>
+                            <a href="#version_history" title="Version history">Version history</a>
+                        </li>
+                        <li>
+                            <a href="#request" title="Request">Request</a>
+                            <ul>
+                                <li>
+                                    <a href="#authorization_data" title="Authorization data">Authorization data</a>
+                                </li>
+                                <li>
+                                    <a href="#request_parameters" title="Request parameters">Request parameters</a>
+                                </li>
+                                <li>
+                                    <a href="#connection" title="Connection">Connection</a>
+                                </li>
+                                <li>
+                                    <a href="#disconnection" title="Disconnection">Disconnection</a>
+                                </li>
+                                <li>
+                                    <a href="#example" title="Example">Example</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#sections_and_tasks" title="Sections and tasks">Sections and tasks</a>
+                            <ul>
+                                <li>
+    <a href="#section_addon" title="addon">
+        addon    </a>
+</li><li>
+    <a href="#section_cart" title="cart">
+        cart    </a>
+</li><li>
+    <a href="#section_category" title="category">
+        category    </a>
+</li><li>
+    <a href="#section_checkout" title="checkout">
+        checkout    </a>
+</li><li>
+    <a href="#section_connection" title="connection">
+        connection    </a>
+</li><li>
+    <a href="#section_content" title="content">
+        content    </a>
+</li><li>
+    <a href="#section_order" title="order">
+        order    </a>
+</li><li>
+    <a href="#section_product" title="product">
+        product    </a>
+</li><li>
+    <a href="#section_shop" title="shop">
+        shop    </a>
+</li><li>
+    <a href="#section_user" title="user">
+        user    </a>
+</li><li>
+    <a href="#section_wishlist" title="wishlist">
+        wishlist    </a>
+</li>                            </ul>
+                        </li>
+                        <li>
+                            <a href="#reply" title="Reply">Reply</a>
+                            <ul>
+                                <li>
+                                    <a href="#formats" title="Formats">Formats</a>
+                                </li>
+                                <li>
+                                    <a href="#reports" title="Reports">Reports</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </menu>
+            </div><!--
+         --><div>
+                <section id="summary">
+                    <header>Summary</header>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="variable">Version</td>
+                                    <td>
+                                        <a href="#version_history_1.0.4">
+                                            1.0.4                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">Date</td>
+                                    <td>
+                                        01.11.2018                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">Author</td>
+                                    <td>MAXXmarketing GmbH</td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">Author's email</td>
+                                    <td>
+                                        <a href="mailto: marketing@maxx-marketing.net">
+                                            marketing@maxx-marketing.net                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">Author's website</td>
+                                    <td>
+                                        <a href="https://www.webdesigner-profi.de" target="_blank">
+                                            https://www.webdesigner-profi.de                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">License</td>
+                                    <td>
+                                        GNU/GPL
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">Copyright</td>
+                                    <td>
+                                        Copyright (C) 2010 <a href="https://www.webdesigner-profi.de" target="_blank">webdesigner-profi.de</a>. All rights reserved
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section id="introduction">
+                    <header>Introduction</header>
+                    <div>
+                        <p>The JoomShopping API is the RESTful system that allows to use JoomShopping capabilities. Before using the API need to get authorization data (email, password) of an API user from the administrator of a site, where the API is installed. All code snippets are on PHP.</p>
+                    </div>
+                </section>
+                <section id="technical_requirements">
+                    <header>Technical requirements</header>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="variable">PHP</td>
+                                    <td>7.0+</td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">MySQL</td>
+                                    <td>5.5.3+</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        or <span class="variable">SQL Server</span>
+                                    </td>
+                                    <td>10.50.1600.1+</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        or <span class="variable">PostgreSQL</span>
+                                    </td>
+                                    <td>9.1+</td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">Joomla!</td>
+                                    <td>3.8.0+</td>
+                                </tr>
+                                <tr>
+                                    <td class="variable">JoomShopping</td>
+                                    <td>4.16.3+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section id="version_history">
+                    <header>Version history</header>
+                    <div>
+                        <ul>
+                            <li id="version_history_1.0.3">
+    <div class="version_and_date">
+        <div class="version">
+            1.0.3        </div>
+        <div class="separator">
+            |
+        </div>
+        <div class="date">
+            01.11.2018        </div>
+    </div>
+    <ol class="changes">
+        <li>
+    Fixed HTTP authorization errors reporting</li><li>
+    Added <span class="variable">Example</span> documentation subsection</li>    </ol>
+</li><li id="version_history_1.0.2">
+    <div class="version_and_date">
+        <div class="version">
+            1.0.2        </div>
+        <div class="separator">
+            |
+        </div>
+        <div class="date">
+            30.10.2018        </div>
+    </div>
+    <ol class="changes">
+        <li>
+    Standardized the basic features</li>    </ol>
+</li><li id="version_history_1.0.1">
+    <div class="version_and_date">
+        <div class="version">
+            1.0.1        </div>
+        <div class="separator">
+            |
+        </div>
+        <div class="date">
+            18.10.2018        </div>
+    </div>
+    <ol class="changes">
+        <li>
+    Integrated the support of addons</li><li>
+    Added <span class="variable">content</span> section</li>    </ol>
+</li><li id="version_history_1.0.0">
+    <div class="version_and_date">
+        <div class="version">
+            1.0.0        </div>
+        <div class="separator">
+            |
+        </div>
+        <div class="date">
+            22.02.2018        </div>
+    </div>
+    <ol class="changes">
+        <li>
+    Integrated the support of PHP version 7.1</li><li>
+    Integrated the support of PHP version 7.2</li><li>
+    Renamed <span class="variable">fromWishlistToCart</span> task to <span class="variable">toCart</span> in <span class="variable">wishlist</span> section</li>    </ol>
+</li><li id="version_history_0.2.6">
+    <div class="version_and_date">
+        <div class="version">
+            0.2.6        </div>
+        <div class="separator">
+            |
+        </div>
+        <div class="date">
+            08.12.2017        </div>
+    </div>
+    <ol class="changes">
+        <li>
+    Added <span class="variable">update</span> task in <span class="variable">cart</span> section</li><li>
+    Added <span class="variable">update</span> task in <span class="variable">wishlist</span> section</li><li>
+    Added <span class="variable">group</span> task in <span class="variable">product</span> section</li><li>
+    Added <span class="variable">search</span> task in <span class="variable">product</span> section</li><li>
+    Added <span class="variable">searchInfo</span> task in <span class="variable">product</span> section</li><li>
+    Separated <span class="variable">cart</span> and <span class="variable">wishlist</span> reports and tasks</li><li>
+    Changed parameters of <span class="variable">item</span> task in <span class="variable">category</span> section</li>    </ol>
+</li><li id="version_history_0.2.5">
+    <div class="version_and_date">
+        <div class="version">
+            0.2.5        </div>
+        <div class="separator">
+            |
+        </div>
+        <div class="date">
+            01.12.2017        </div>
+    </div>
+    <ol class="changes">
+        <li>
+    Deleted <span class="variable">user</span> return parameter of <span class="variable">createInfo</span> task of <span class="variable">user</span> section</li><li>
+    Deleted <span class="variable">user_id</span> parameter of <span class="variable">changePassword</span> task of <span class="variable">user</span> section</li><li>
+    Added <span class="variable">edit</span> task in <span class="variable">user</span> section</li><li>
+    Added <span class="variable">editInfo</span> task in <span class="variable">user</span> section</li><li>
+    Added <span class="variable">groups</span> task in <span class="variable">user</span> section</li><li>
+    Added <span class="variable">order</span> task in <span class="variable">user</span> section</li><li>
+    Added <span class="variable">orders</span> task in <span class="variable">user</span> section</li><li>
+    Added <span class="variable">ordersAll</span> task in <span class="variable">user</span> section</li>    </ol>
+</li>                        </ul>
+                    </div>
+                </section>
+                <section id="request">
+                    <header>Request</header>
+                    <div>
+                        <section>
+                            <div>
+                                <p>Requests to the API are performing through <span class="variable">POST</span> request method with help of <span class="variable">cURL</span> or another same software. Here is a structure of a request:</p>
+                                <code>$curl = curl_init('<span class="variable">%site_url%</span>/index.php?option=com_jshopping&controller=addon_api');
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    '<span class="variable">%authorization_header%</span>'
+]);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query([
+    '<span class="variable">%arg1_name%</span>' => '<span class="variable">%arg1_value%</span>',
+    '<span class="variable">%arg2_name%</span>' => '<span class="variable">%arg2_value%</span>',
+    '<span class="variable">%arg3_name%</span>' => '<span class="variable">%arg3_value%</span>',
+    ...
+]));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$res = curl_exec($curl);
+curl_close($curl);
+if ($res !== false) {
+    $res = json_decode($res, true);
+}
+exit(var_dump($res));</code>
+                                <p>
+                                    Where <span class="variable">%site_url%</span> is the base URL of a website where the API is installed, <a href="https://www.example.com" target="_blank">https://www.example.com</a> for example.
+                                </p>
+                                <p>
+                                    <span class="variable">%authorization_header%</span> is the <a href="#authorization_data">authorization data</a>, sent in headers.
+                                </p>
+                                <p>
+                                    <span class="variable">%argN_name%</span> and <span class="variable">%argN_value%</span> are keys and values of the <a href="#request_parameters">request parameters</a> array, wrapped with <a href="http://php.net/manual/function.http-build-query.php" target="_blank" class="variable">http_build_query</a> function, because they are must be sent as array only.
+                                </p>
+                                <p>
+                                    The API returns the <a href="#reply">result</a> in a <a href="#formats">format</a>, <a href="#request_parameters">specified in a request</a>, by default it is <span class="variable">json</span>.
+                                </p>
+                            </div>
+                        </section>
+                        <section id="authorization_data">
+                            <header>Authorization data</header>
+                            <div>
+                                <p>The authorization data is sent in headers. It is required for every request. At very first request this header should be like this:</p>
+                                <p>
+                                <code>Authorization: Basic <span class="variable">%email%</span>:<span class="variable">%password%</span></code>
+                                </p>
+                                <p>Where <span class="variable">%email%</span>:<span class="variable">%password%</span> is base64 encoded line with email and password of an API user, concatenated with a colon.</p>
+                                <p>After this request the token will be returned. In all next requests send it in headers like this:</p>
+                                <p>
+                                <code>Authorization: Bearer <span class="variable">%token%</span></code>
+                                </p>
+                                <p>The HTTP authorization must be switched on at a server of a website where the API is installed. If not, it can be switched on by adding the next string into <span class="variable">.htaccess</span> file at the website</p>
+                                <code>RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]</code>
+                            </div>
+                        </section>
+                        <section id="request_parameters">
+                            <header>Request parameters</header>
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Default value</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>section</td>
+                                            <td class="datatype">string</td>
+                                            <td>—</td>
+                                            <td>The API section</td>
+                                        </tr>
+                                        <tr>
+                                            <td>task</td>
+                                            <td class="datatype">string</td>
+                                            <td>—</td>
+                                            <td>The action, what need to do</td>
+                                        </tr>
+                                        <tr>
+                                            <td>format</td>
+                                            <td class="datatype">string</td>
+                                            <td>json</td>
+                                            <td>The format of reply</td>
+                                        </tr>
+                                        <tr>
+                                            <td>args</td>
+                                            <td class="datatype">array</td>
+                                            <td>—</td>
+                                            <td>Arguments, needed for specified action</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                        <section id="connection">
+                            <header>Connection</header>
+                            <div>
+                                <p>To connect to the API send <span class="variable">open</span> task to <a href="#section_connection" class="variable">connection</a> section like this:</p>
+                                <code>$curl = curl_init('<span class="variable">%site_url%</span>/index.php?option=com_jshopping&controller=addon_api');
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    '<span class="variable">%authorization_header%</span>'
+]);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query([
+    'section' => 'connection',
+    'task'    => 'open'
+]));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$res = curl_exec($curl);
+curl_close($curl);
+if ($res !== false) {
+    $res = json_decode($res, true);
+}
+$token = $res['result'];</code>
+                                <p>After this request the token will be returned as a result. Use it for all next requests.</p>
+                                <code>Authorization: Bearer <span class="variable">%token%</span></code>
+                                <p>Note that the token has the time limit, <span class="variable">60</span> minutes by default. The token's timestamp is updated after every new request, but if there are no activity during this time, the token will expire. In this case need to get a new token again to continue to use the API. The time limit can be changed by the site administrator.</p>
+                            </div>
+                        </section>
+                        <section id="disconnection">
+                            <header>Disconnection</header>
+                            <div>
+                                <p>Always close the connection after finish of work with the API. Call <span class="variable">close</span> task of <a href="#section_connection" class="variable">connection</a> section to do this.</p>
+                            </div>
+                        </section>
+                        <section id="example">
+                            <header>Example</header>
+                            <div>
+                                Initializing access data:
+                                <code><span class="variable">$site_url</span> = 'https://example.com';
+<span class="variable">$email</span>    = 'example@email.com';
+<span class="variable">$password</span> = 'example_password';</code>
+                                Opening a connection and getting the token:
+                                <code>$curl = curl_init(<span class="variable">$site_url</span> . '/index.php?option=com_jshopping&controller=addon_api');
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    'Authorization: Basic ' . base64_encode(<span class="variable">$email</span> . ':' . <span class="variable">$password</span>)
+]);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query([
+    'section' => 'connection',
+    'task'    => 'open'
+]));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$res = curl_exec($curl);
+curl_close($curl);
+if ($res !== false) {
+    $res = json_decode($res, true);
+}
+<span class="variable">$token</span> = $res['result'];</code>
+                                Getting information about the connection:
+                                <code>$curl = curl_init(<span class="variable">$site_url</span> . '/index.php?option=com_jshopping&controller=addon_api');
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer ' . <span class="variable">$token</span>
+]);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query([
+    'section' => 'connection',
+    'task'    => 'info'
+]));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$res = curl_exec($curl);
+curl_close($curl);
+if ($res !== false) {
+    $res = json_decode($res, true);
+}
+<span class="variable">$info</span> = $res['result'];</code>
+                                Closing the connection:
+                                <code>$curl = curl_init(<span class="variable">$site_url</span> . '/index.php?option=com_jshopping&controller=addon_api');
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer ' . <span class="variable">$token</span>
+]);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query([
+    'section' => 'connection',
+    'task'    => 'close'
+]));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_exec($curl);
+curl_close($curl);</code>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <section id="sections_and_tasks">
+                    <header>Sections and tasks</header>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>
+                                        <table class="args">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="4">Arguments</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Default value</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </th>
+                                    <th>Result type</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <section id="section_addon">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_addon" colspan="4">addon</th>
+            </tr>
+            <tr>
+    <td class="variable">ids</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                ids            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns aliases of all addons            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">item</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                item            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about an addon            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Addon's alias    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">items</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        string array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                items            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about addons            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        string array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Addons' aliases    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_cart">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_cart" colspan="4">cart</th>
+            </tr>
+            <tr>
+    <td class="variable">add</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        product_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        quantity    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        attributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        freeattributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        additional_fields    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                add            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Adds a product into the cart            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        product_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        quantity    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's quantity    </td>
+</tr><tr>
+    <td class="variable">
+        attributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of attributes in format<table><tr><td><span class="datatype">int</span> <span class="variable">attribut_id</span><td><span class="datatype">string</span> <span class="variable">attribut_value</span></td></tr></table>    </td>
+</tr><tr>
+    <td class="variable">
+        freeattributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of free attributes in format<table><tr><td><span class="datatype">int</span> <span class="variable">free_attribut_id</span></td><td><span class="datatype">string</span> <span class="variable">free_attribut_value</span></td></tr></table>    </td>
+</tr><tr>
+    <td class="variable">
+        additional_fields    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of additional fields in format<table><tr><td><span class="datatype">string</span> <span class="variable">field_key</span></td><td><span class="datatype">string</span> <span class="variable">field_value</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">clear</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                clear            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Clears all the data of the cart            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">delete</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        index    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                delete            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Deletes a product from the cart            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        index    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's index number in the cart    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">discount</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        code    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                discount            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Applies a discount to the cart            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        code    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Discount code    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">info</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                info            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about the cart            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">update</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        quantities    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                update            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Updates products' quantities in the cart            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        quantities    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of new quantities in format<table><tr><td><span class="datatype">int</span> <span class="variable">product_index</span></td><td><span class="datatype">int</span> <span class="variable">product_quantity</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_category">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_category" colspan="4">category</th>
+            </tr>
+            <tr>
+    <td class="variable">ids</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                ids            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns identifiers of all categories            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">item</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                item            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about a category            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Category identifier. Use <span class="variable">search</span> task of <span class="variable">product</span> section to get category products    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">items</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                items            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about categories            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Categories' identifiers    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">tree</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                tree            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the categories tree            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_checkout">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_checkout" colspan="4">checkout</th>
+            </tr>
+            <tr>
+    <td class="variable">step2</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step2            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information, needed for making step #2. Start from this step to make an order. Then call saving task. Repeat this procedure for all steps until the last. Note that some steps can be disabled, so before making the next step always check its number by returned parameter <span class="variable">next_step</span> or using tasks <span class="variable">stepNumber</span> or <span class="variable">steps</span>            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step2save</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        input    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step2save            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Makes step #2            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        input    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's input in format<table><tr><td><span class="datatype">string</span> <span class="variable">field_key</span></td><td><span class="datatype">string</span> <span class="variable">field_value</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step3</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step3            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information, needed for making step #3            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step3save</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        payment_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        extra_params    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        []    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step3save            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Makes step #3            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        payment_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Payment's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        extra_params    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Extra parameters    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step4</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step4            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information, needed for making step #4            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step4save</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        shipping_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        extra_params    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        []    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step4save            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Makes step #4            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        shipping_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Shipping's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        extra_params    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Extra parameters    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step5</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step5            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information, needed for making step #5            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">step5save</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        confirmation    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        payment_back_link    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        extra_params    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        []    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                step5save            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Makes step #5. This task returns filled parameter <span class="variable">payment_form</span> if payment is needed and empty otherwise. To make the payment display the contents of this parameter as HTML of version 5 on a needed page of the application. In most cases an application user will be automatically redirected to a web page of a payment system, chosen in <span class="variable">step3save</span> task. In some cases ('Pay Pal PLUS' for example) the user need to choose some parameters before the redirect. At that web page the user need to make a payment in a standard way. After the payment or cancellation the user will be redirected back to the application by the link passed in <span class="variable">step5save</span> task as <span class="variable">payment_back_link</span> parameter. GET parameter <span class="variable">act</span> also will be added to the back link. In most cases it will be equals to <span class="variable">return</span> if the payment was suuccessful, <span class="variable">cancel</span> if the payment was cancelled and <span class="variable">error</span> if some error has occurred. Later on, if the payment was successful, the payment system will send the confirmation request to the shop by its own            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        confirmation    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's confirmation    </td>
+</tr><tr>
+    <td class="variable">
+        payment_back_link    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        URL, where a user will be redirected after the completion or cancellation of the payment    </td>
+</tr><tr>
+    <td class="variable">
+        extra_params    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Extra parameters    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">stepNumber</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                stepNumber            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Get the number of the current step            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                int            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">steps</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                steps            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns numbers of all steps            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_connection">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_connection" colspan="4">connection</th>
+            </tr>
+            <tr>
+    <td class="variable">close</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                close            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Closes the current connection with the API. Call it always after end of work with the API            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">info</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                info            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about the current connection with the API            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">open</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                open            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Opens a new connection with the API and returns the token of it            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                string            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">user</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                user            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about the currently connected API user            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_content">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_content" colspan="4">content</th>
+            </tr>
+            <tr>
+    <td class="variable">cartReturnPolicy</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                cartReturnPolicy            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about cart's return policy            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">ids</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                ids            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns aliases of all shop content pages            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">item</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                item            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about a shop content page            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Shop content page alias    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">items</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        string array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                items            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about shop content pages            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        string array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Shop content pages' aliases    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">orderReturnPolicy</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        order_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                orderReturnPolicy            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about order's return policy            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        order_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Order identifier    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_order">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_order" colspan="4">order</th>
+            </tr>
+            <tr>
+    <td class="variable">ids</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                ids            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns identifiers of all orders            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">item</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                item            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about an order            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Order's identifier    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">items</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                items            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about orders            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Orders' identifiers    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">states</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                states            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about orders' states            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_product">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_product" colspan="4">product</th>
+            </tr>
+            <tr>
+    <td class="variable">group</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        group    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                group            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about products of a specified group            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        group    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Products' group:<table><tr><td class="variable">bestseller</td><td>The best-selling products</td></tr><tr><td class="variable">last</td><td>The last-added products</td></tr><tr><td class="variable">random</td><td>A random set of products</td></tr><tr><td class="variable">tophits</td><td>The most-viewed products</td></tr><tr><td class="variable">toprating</td><td>The most rated products</td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">ids</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                ids            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns identifiers of all products            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">item</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        attributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        []    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                item            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about a product            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        attributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        An array of attributes in format<table><tr><td><span class="datatype">int</span> <span class="variable">attribut_id</span></td><td><span class="datatype">string</span> <span class="variable">attribut_value</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">items</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                items            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about products            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Products' identifiers    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">search</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        search    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        ''    </td>
+</tr><tr>
+    <td class="variable">
+        search_type    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        any    </td>
+</tr><tr>
+    <td class="variable">
+        categories    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        []    </td>
+</tr><tr>
+    <td class="variable">
+        include_subcat    </td>
+    <td class="datatype">
+        bool    </td>
+    <td>
+        true    </td>
+</tr><tr>
+    <td class="variable">
+        manufacturers    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        []    </td>
+</tr><tr>
+    <td class="variable">
+        vendors    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        []    </td>
+</tr><tr>
+    <td class="variable">
+        labels    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        []    </td>
+</tr><tr>
+    <td class="variable">
+        price_from    </td>
+    <td class="datatype">
+        float string    </td>
+    <td>
+        0    </td>
+</tr><tr>
+    <td class="variable">
+        price_to    </td>
+    <td class="datatype">
+        float string    </td>
+    <td>
+        0    </td>
+</tr><tr>
+    <td class="variable">
+        date_from    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        ''    </td>
+</tr><tr>
+    <td class="variable">
+        date_to    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        ''    </td>
+</tr><tr>
+    <td class="variable">
+        extra_fields    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        []    </td>
+</tr><tr>
+    <td class="variable">
+        order    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        1    </td>
+</tr><tr>
+    <td class="variable">
+        orderby    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        0    </td>
+</tr><tr>
+    <td class="variable">
+        limit    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        12    </td>
+</tr><tr>
+    <td class="variable">
+        limitstart    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        0    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                search            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the list of found products            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        search    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        ''    </td>
+    <td class="description">
+        A search query    </td>
+</tr><tr>
+    <td class="variable">
+        search_type    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        any    </td>
+    <td class="description">
+        Search by:<table><tr><td class="variable">all</td><td>All parts of the search query</td></tr><tr><td class="variable">any</td><td>Any part of the query</td></tr><tr><td class="variable">exact</td><td>Exact match with the query</td></tr></table><p>Has a matter only when a search query is not empty</p>    </td>
+</tr><tr>
+    <td class="variable">
+        categories    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Categories' identifiers    </td>
+</tr><tr>
+    <td class="variable">
+        include_subcat    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="default">
+        true    </td>
+    <td class="description">
+        Whether to search in subcategories    </td>
+</tr><tr>
+    <td class="variable">
+        manufacturers    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Manufacturers' identifiers    </td>
+</tr><tr>
+    <td class="variable">
+        vendors    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Vendors' identifiers    </td>
+</tr><tr>
+    <td class="variable">
+        labels    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Labels' identifiers    </td>
+</tr><tr>
+    <td class="variable">
+        price_from    </td>
+    <td class="datatype">
+        float string    </td>
+    <td class="default">
+        0    </td>
+    <td class="description">
+        Minimum product price    </td>
+</tr><tr>
+    <td class="variable">
+        price_to    </td>
+    <td class="datatype">
+        float string    </td>
+    <td class="default">
+        0    </td>
+    <td class="description">
+        Maximum product price    </td>
+</tr><tr>
+    <td class="variable">
+        date_from    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        ''    </td>
+    <td class="description">
+        Minimum product creation date in format <span class="variable">YYYY-MM-DD HH:MM:SS</span>    </td>
+</tr><tr>
+    <td class="variable">
+        date_to    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        ''    </td>
+    <td class="description">
+        Maximum product creation date in format <span class="variable">YYYY-MM-DD HH:MM:SS</span>    </td>
+</tr><tr>
+    <td class="variable">
+        extra_fields    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        []    </td>
+    <td class="description">
+        Products' extra fields in format<table><tr><td><span class="datatype">int</span> <span class="variable">extra_field_id</span></td><td><span class="datatype">string</span> <span class="variable">extra_field_value</span></td></tr></table>or<table><tr><td><span class="datatype">int</span> <span class="variable">extra_field_id</span></td><td><span class="datatype">int array</span> <span class="variable">extra_field_values_ids</span></td></tr></table><p>The support of extra fields can be switched off by the site administrator</p>    </td>
+</tr><tr>
+    <td class="variable">
+        order    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        1    </td>
+    <td class="description">
+        Identifier of a property by which to order products. One of keys of <span class="variable">sorting_products_field_s_select</span> parameter of the shop configuration. The default value is stored in the shop configuration under <span class="variable">product_sorting</span> key and can be changed by the site administrator    </td>
+</tr><tr>
+    <td class="variable">
+        orderby    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        0    </td>
+    <td class="description">
+        Products order direction:<table><tr><td class="variable">0<td>Ascending</td></tr><tr><td class="variable">1<td>Descending</td></tr></table><p>The default value is stored in the shop configuration under <span class="variable">product_sorting_direction</span> key and can be changed by the site administrator</p>    </td>
+</tr><tr>
+    <td class="variable">
+        limit    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        12    </td>
+    <td class="description">
+        Number of products to return. The default value is stored in the shop configuration under <span class="variable">count_products_to_page</span> key and can be changed by the site administrator    </td>
+</tr><tr>
+    <td class="variable">
+        limitstart    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        0    </td>
+    <td class="description">
+        Start position of products. Used for pagination    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">searchInfo</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                searchInfo            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information, needed for the products searching            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_shop">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_shop" colspan="4">shop</th>
+            </tr>
+            <tr>
+    <td class="variable">config</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                config            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the shop configuration            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_user">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_user" colspan="4">user</th>
+            </tr>
+            <tr>
+    <td class="variable">activate</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        token    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                activate            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Activates a new user account. Returns the information about the just activated user            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        token    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Activation token    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">cancelOrder</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        order_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                cancelOrder            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Cancels an order            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        order_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Order's identifier    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">changePassword</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        old_password    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        new_password    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                changePassword            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Changes the password of a user            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        old_password    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's current password    </td>
+</tr><tr>
+    <td class="variable">
+        new_password    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's new password    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">create</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        input    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                create            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Registers a new user. Returns the information about the just registered user            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        input    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Registration data in format<table><tr><td><span class="datatype">string</span> <span class="variable">field_key</span></td><td><span class="datatype">string</span> <span class="variable">field_value</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">createInfo</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                createInfo            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information, needed for a new user registration            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">edit</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        input    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                edit            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Edits the information about a user            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        input    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        New user's data in format<table><tr><td><span class="datatype">string</span> <span class="variable">field_key</span></td><td><span class="datatype">string</span> <span class="variable">field_value</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">editInfo</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                editInfo            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information for editing of user's data            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">groups</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                groups            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about user groups            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">ids</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                ids            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns identifiers of all users            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">item</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        0    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                item            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about a user            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        0    </td>
+    <td class="description">
+        User's identifier. The current user's identifier will be used if <span class="variable">id</span> is <span class="variable">0</span>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">items</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                items            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about users            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Users' identifiers    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">login</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        username    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        password    </td>
+    <td class="datatype">
+        string    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                login            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Logs a user in            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        username    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's name    </td>
+</tr><tr>
+    <td class="variable">
+        password    </td>
+    <td class="datatype">
+        string    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's password    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">logout</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                logout            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Logs the current user out            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">order</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        order_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                order            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about a user's order            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        order_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Order's identifier    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">orders</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        orders_ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                orders            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about user's orders            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        User's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        orders_ids    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Orders' identifiers    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section><section id="section_wishlist">
+    <table>
+        <tbody>
+            <tr>
+                <th id="section_wishlist" colspan="4">wishlist</th>
+            </tr>
+            <tr>
+    <td class="variable">add</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        product_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        quantity    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        attributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        freeattributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr><tr>
+    <td class="variable">
+        additional_fields    </td>
+    <td class="datatype">
+        array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                add            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Adds a product into the wishlist            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        product_id    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's identifier    </td>
+</tr><tr>
+    <td class="variable">
+        quantity    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's quantity    </td>
+</tr><tr>
+    <td class="variable">
+        attributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of attributes in format<table><tr><td><span class="datatype">int</span> <span class="variable">attribut_id</span><td><span class="datatype">string</span> <span class="variable">attribut_value</span></td></tr></table>    </td>
+</tr><tr>
+    <td class="variable">
+        freeattributes    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of free attributes in format<table><tr><td><span class="datatype">int</span> <span class="variable">free_attribut_id</span></td><td><span class="datatype">string</span> <span class="variable">free_attribut_value</span></td></tr></table>    </td>
+</tr><tr>
+    <td class="variable">
+        additional_fields    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of additional fields in format<table><tr><td><span class="datatype">string</span> <span class="variable">field_key</span></td><td><span class="datatype">string</span> <span class="variable">field_value</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">clear</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                clear            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Clears all the data of the wishlist            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">delete</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        index    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                delete            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Deletes a product from the wishlist            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        index    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's index number in the wishlist    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">info</td>
+    <td>
+        —    </td>
+    <td class="datatype">
+        array    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                info            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Returns the information about the wishlist            </p>
+        </section>
+                    <section>
+            <header>Return type</header>
+            <p class="datatype">
+                array            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">toCart</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        index    </td>
+    <td class="datatype">
+        int    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                toCart            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Sends a product from the wishlist to the cart            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        index    </td>
+    <td class="datatype">
+        int    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        Product's index number in the wishlist    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr><tr>
+    <td class="variable">update</td>
+    <td>
+        <table class="args">
+    <tbody>
+        <tr>
+    <td class="variable">
+        quantities    </td>
+    <td class="datatype">
+        int array    </td>
+    <td>
+        —    </td>
+</tr>    </tbody>
+</table>    </td>
+    <td class="datatype">
+        bool    </td>
+    <td class="details-btn"></td>
+</tr>
+<tr class="details">
+    <td colspan="4">
+        <section>
+            <header>Name</header>
+            <p class="variable">
+                update            </p>
+        </section>
+        <section>
+            <header>Description</header>
+            <p>
+                Updates products' quantities in the wishlist            </p>
+        </section>
+            <section>
+    <header>Parameters</header>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+    <td class="variable">
+        quantities    </td>
+    <td class="datatype">
+        int array    </td>
+    <td class="default">
+        —    </td>
+    <td class="description">
+        An array of new quantities in format<table><tr><td><span class="datatype">int</span> <span class="variable">product_index</span></td><td><span class="datatype">int</span> <span class="variable">product_quantity</span></td></tr></table>    </td>
+</tr>        </tbody>
+    </table>
+</section>        <section>
+            <header>Return type</header>
+            <p class="datatype">
+                bool            </p>
+        </section>
+    </td>
+</tr>        </tbody>
+    </table>
+</section>                    </div>
+                </section>
+                <section id="reply">
+                    <header>Reply</header>
+                    <div>
+                        <section>
+                            <p>The API returns the array with <span class="variable">status</span>, <span class="variable">code</span>, <span class="variable">report</span> and <span class="variable">result</span> of a request. This array is returned in a <a href="#formats">format</a>, <a href="#request_parameters">specified in a request</a>, by default it is <span class="variable">json</span>. Here is an example of a reply:</p>
+                            <code>array (size=4)
+    'status' => string 'ok' (length=2)
+    'code'   => int 1
+    'report' => string 'No errors. Success' (length=18)
+    'result' => string 'KfAl9WMorrEjKtCPS7M1FHo1szhOlxS4' (length=32)</code>
+                            <p>The <span class="variable">status</span> is the title of a reply. Each status has it's own set of codes and reports. <a href="#reports">Here</a> is the list of possible reports.</p>
+                            <p>The <span class="variable">code</span> is for identify a reply programmatically.</p>
+                            <p>The <span class="variable">report</span> describes a reply more detailed.</p>
+                            <p>The <span class="variable">result</span> is directly the result of a reply.</p>
+                            <p>A reply is successful only when it's status is <span class="variable">ok</span>, otherwise — it has an error.</p>
+                        </section>
+                        <section id="formats">
+                            <header>Formats</header>
+                            <div>
+                                <p>The API returns the result in a format, <a href="#request_parameters">specified in a request</a>, by default it is <span class="variable">json</span>. Here is the list of available formats:</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>json</td>
+                                            <td>Reply will be JSON-encoded</td>
+                                        </tr>
+                                        <tr>
+                                            <td>var_dump</td>
+                                            <td>
+                                                Reply will be shown as result of <a href="http://php.net/manual/function.var-dump.php" target="_blank" class="variable">var_dump</a> PHP function. Useful while testing
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                        <section id="reports">
+                            <header>Reports</header>
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Code</th>
+                                            <th>Report</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+    <td colspan="2">
+        addon_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown addon alias    </td>
+</tr><tr>
+    <td colspan="2">
+        cart_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Wrong quantity    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Quantity less than minimal    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Quantity more than maximal    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Not enough products in stock    </td>
+</tr><tr>
+    <td>
+        5    </td>
+    <td>
+        No required product attribute(s)    </td>
+</tr><tr>
+    <td>
+        6    </td>
+    <td>
+        No required product free attribute(s)    </td>
+</tr><tr>
+    <td>
+        7    </td>
+    <td>
+        Unknown atribute id    </td>
+</tr><tr>
+    <td>
+        8    </td>
+    <td>
+        Unknown atribute value    </td>
+</tr><tr>
+    <td>
+        9    </td>
+    <td>
+        Unknown free atribute id    </td>
+</tr><tr>
+    <td>
+        10    </td>
+    <td>
+        Unknown product index    </td>
+</tr><tr>
+    <td>
+        11    </td>
+    <td>
+        Wrong discount code    </td>
+</tr><tr>
+    <td colspan="2">
+        category_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown category id    </td>
+</tr><tr>
+    <td colspan="2">
+        checkout_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        The cart is empty    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Sum less than minimal    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Sum more than maximal    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Step(s) missed    </td>
+</tr><tr>
+    <td>
+        5    </td>
+    <td>
+        Step is disabled by the site administrator    </td>
+</tr><tr>
+    <td>
+        6    </td>
+    <td>
+        No payment    </td>
+</tr><tr>
+    <td>
+        7    </td>
+    <td>
+        Payment error    </td>
+</tr><tr>
+    <td>
+        8    </td>
+    <td>
+        No shipping    </td>
+</tr><tr>
+    <td>
+        9    </td>
+    <td>
+        Shipping error    </td>
+</tr><tr>
+    <td>
+        10    </td>
+    <td>
+        No user confirmation    </td>
+</tr><tr>
+    <td colspan="2">
+        connection_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        No authorization header    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Wrong type of authorization header    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        No email address    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        No password    </td>
+</tr><tr>
+    <td>
+        5    </td>
+    <td>
+        Unknown email address    </td>
+</tr><tr>
+    <td>
+        6    </td>
+    <td>
+        Wrong password    </td>
+</tr><tr>
+    <td>
+        7    </td>
+    <td>
+        Wrong token    </td>
+</tr><tr>
+    <td>
+        8    </td>
+    <td>
+        Expired token    </td>
+</tr><tr>
+    <td>
+        9    </td>
+    <td>
+        You are blocked by the site administrator    </td>
+</tr><tr>
+    <td colspan="2">
+        content_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown alias    </td>
+</tr><tr>
+    <td colspan="2">
+        ok    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Success    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Notice    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Warning    </td>
+</tr><tr>
+    <td colspan="2">
+        order_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown order id    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Need to pay the order first    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Failed to cancel the order    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Order already cancelled    </td>
+</tr><tr>
+    <td colspan="2">
+        payment_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unlicensed payment system    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Failed to create payment form    </td>
+</tr><tr>
+    <td colspan="2">
+        product_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown product id    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Unknown product group    </td>
+</tr><tr>
+    <td colspan="2">
+        request_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown format    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        No section    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        No task    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Unknown section    </td>
+</tr><tr>
+    <td>
+        5    </td>
+    <td>
+        Unknown task    </td>
+</tr><tr>
+    <td>
+        6    </td>
+    <td>
+        No required argument(s)    </td>
+</tr><tr>
+    <td>
+        7    </td>
+    <td>
+        Wrong argument(s)    </td>
+</tr><tr>
+    <td>
+        8    </td>
+    <td>
+        Access denied    </td>
+</tr><tr>
+    <td colspan="2">
+        server_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Internal server error    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Failed to save data to the database    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Failed to update data in the database    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Failed to get data from the database    </td>
+</tr><tr>
+    <td colspan="2">
+        user_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Unknown user id    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Need to login first    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Username and password do not match    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Wrong old password    </td>
+</tr><tr>
+    <td>
+        5    </td>
+    <td>
+        No required field    </td>
+</tr><tr>
+    <td>
+        6    </td>
+    <td>
+        No required field 'title'    </td>
+</tr><tr>
+    <td>
+        7    </td>
+    <td>
+        No required field 'f_name'    </td>
+</tr><tr>
+    <td>
+        8    </td>
+    <td>
+        No required field 'l_name'    </td>
+</tr><tr>
+    <td>
+        9    </td>
+    <td>
+        No required field 'm_name'    </td>
+</tr><tr>
+    <td>
+        10    </td>
+    <td>
+        No required field 'firma_name'    </td>
+</tr><tr>
+    <td>
+        11    </td>
+    <td>
+        No required field 'client_type'    </td>
+</tr><tr>
+    <td>
+        12    </td>
+    <td>
+        No required field 'firma_code'    </td>
+</tr><tr>
+    <td>
+        13    </td>
+    <td>
+        No required field 'tax_number'    </td>
+</tr><tr>
+    <td>
+        14    </td>
+    <td>
+        No required field 'email'    </td>
+</tr><tr>
+    <td>
+        15    </td>
+    <td>
+        No required field 'birthday'    </td>
+</tr><tr>
+    <td>
+        16    </td>
+    <td>
+        No required field 'u_name'    </td>
+</tr><tr>
+    <td>
+        17    </td>
+    <td>
+        Invalid symbols in field 'u_name'    </td>
+</tr><tr>
+    <td>
+        18    </td>
+    <td>
+        Such user name is already in use    </td>
+</tr><tr>
+    <td>
+        19    </td>
+    <td>
+        Password is too long    </td>
+</tr><tr>
+    <td>
+        20    </td>
+    <td>
+        Password must not contain spaces at the beginning or end    </td>
+</tr><tr>
+    <td>
+        21    </td>
+    <td>
+        Password does not contain enough digits    </td>
+</tr><tr>
+    <td>
+        22    </td>
+    <td>
+        Password does not contain enough symbols    </td>
+</tr><tr>
+    <td>
+        23    </td>
+    <td>
+        Password does not contain enough uppercase characters    </td>
+</tr><tr>
+    <td>
+        24    </td>
+    <td>
+        Password is too short    </td>
+</tr><tr>
+    <td>
+        25    </td>
+    <td>
+        No required field 'password'    </td>
+</tr><tr>
+    <td>
+        26    </td>
+    <td>
+        No required field 'password2' or passwords do not match    </td>
+</tr><tr>
+    <td>
+        27    </td>
+    <td>
+        No required field 'email'    </td>
+</tr><tr>
+    <td>
+        28    </td>
+    <td>
+        No required field 'home'    </td>
+</tr><tr>
+    <td>
+        29    </td>
+    <td>
+        No required field 'apartment'    </td>
+</tr><tr>
+    <td>
+        30    </td>
+    <td>
+        No required field 'street' or 'street_nr'    </td>
+</tr><tr>
+    <td>
+        31    </td>
+    <td>
+        No required field 'zip'    </td>
+</tr><tr>
+    <td>
+        32    </td>
+    <td>
+        No required field 'city'    </td>
+</tr><tr>
+    <td>
+        33    </td>
+    <td>
+        No required field 'state'    </td>
+</tr><tr>
+    <td>
+        34    </td>
+    <td>
+        No required field 'country' or unknown country identifier    </td>
+</tr><tr>
+    <td>
+        35    </td>
+    <td>
+        No required field 'phone'    </td>
+</tr><tr>
+    <td>
+        36    </td>
+    <td>
+        No required field 'mobil_phone'    </td>
+</tr><tr>
+    <td>
+        37    </td>
+    <td>
+        No required field 'fax'    </td>
+</tr><tr>
+    <td>
+        38    </td>
+    <td>
+        No required field 'ext_field_1'    </td>
+</tr><tr>
+    <td>
+        39    </td>
+    <td>
+        No required field 'ext_field_2'    </td>
+</tr><tr>
+    <td>
+        40    </td>
+    <td>
+        No required field 'ext_field_3'    </td>
+</tr><tr>
+    <td>
+        41    </td>
+    <td>
+        No required field 'd_title'    </td>
+</tr><tr>
+    <td>
+        42    </td>
+    <td>
+        No required field 'd_f_name'    </td>
+</tr><tr>
+    <td>
+        43    </td>
+    <td>
+        No required field 'd_l_name'    </td>
+</tr><tr>
+    <td>
+        44    </td>
+    <td>
+        No required field 'd_m_name'    </td>
+</tr><tr>
+    <td>
+        45    </td>
+    <td>
+        No required field 'd_firma_name'    </td>
+</tr><tr>
+    <td>
+        46    </td>
+    <td>
+        No required field 'd_firma_code'    </td>
+</tr><tr>
+    <td>
+        47    </td>
+    <td>
+        No required field 'd_tax_number'    </td>
+</tr><tr>
+    <td>
+        48    </td>
+    <td>
+        No required field 'd_email'    </td>
+</tr><tr>
+    <td>
+        49    </td>
+    <td>
+        No required field 'd_birthday'    </td>
+</tr><tr>
+    <td>
+        50    </td>
+    <td>
+        No required field 'd_home'    </td>
+</tr><tr>
+    <td>
+        51    </td>
+    <td>
+        No required field 'd_apartment'    </td>
+</tr><tr>
+    <td>
+        52    </td>
+    <td>
+        No required field 'd_street' or 'street_nr'    </td>
+</tr><tr>
+    <td>
+        53    </td>
+    <td>
+        No required field 'd_zip'    </td>
+</tr><tr>
+    <td>
+        54    </td>
+    <td>
+        No required field 'd_city'    </td>
+</tr><tr>
+    <td>
+        55    </td>
+    <td>
+        No required field 'd_state'    </td>
+</tr><tr>
+    <td>
+        56    </td>
+    <td>
+        No required field 'd_country'    </td>
+</tr><tr>
+    <td>
+        57    </td>
+    <td>
+        No required field 'd_phone'    </td>
+</tr><tr>
+    <td>
+        58    </td>
+    <td>
+        No required field 'd_mobil_phone'    </td>
+</tr><tr>
+    <td>
+        59    </td>
+    <td>
+        No required field 'd_fax'    </td>
+</tr><tr>
+    <td>
+        60    </td>
+    <td>
+        No required field 'd_ext_field_1'    </td>
+</tr><tr>
+    <td>
+        61    </td>
+    <td>
+        No required field 'd_ext_field_2'    </td>
+</tr><tr>
+    <td>
+        62    </td>
+    <td>
+        No required field 'd_ext_field_3'    </td>
+</tr><tr>
+    <td>
+        70    </td>
+    <td>
+        Users self-registration or self-activation is disabled    </td>
+</tr><tr>
+    <td>
+        71    </td>
+    <td>
+        Wrong activation token    </td>
+</tr><tr>
+    <td>
+        72    </td>
+    <td>
+        Failed to activate the user    </td>
+</tr><tr>
+    <td>
+        73    </td>
+    <td>
+        User's account is not activated or blocked    </td>
+</tr><tr>
+    <td>
+        74    </td>
+    <td>
+        The order does not belong to the current user    </td>
+</tr><tr>
+    <td colspan="2">
+        wishlist_error    </td>
+</tr><tr>
+    <td>
+        1    </td>
+    <td>
+        Wrong quantity    </td>
+</tr><tr>
+    <td>
+        2    </td>
+    <td>
+        Quantity less than minimal    </td>
+</tr><tr>
+    <td>
+        3    </td>
+    <td>
+        Quantity more than maximal    </td>
+</tr><tr>
+    <td>
+        4    </td>
+    <td>
+        Not enough products in stock    </td>
+</tr><tr>
+    <td>
+        5    </td>
+    <td>
+        No required product attribute(s)    </td>
+</tr><tr>
+    <td>
+        6    </td>
+    <td>
+        No required product free attribute(s)    </td>
+</tr><tr>
+    <td>
+        7    </td>
+    <td>
+        Unknown atribute id    </td>
+</tr><tr>
+    <td>
+        8    </td>
+    <td>
+        Unknown atribute value    </td>
+</tr><tr>
+    <td>
+        9    </td>
+    <td>
+        Unknown free atribute id    </td>
+</tr><tr>
+    <td>
+        10    </td>
+    <td>
+        Unknown product index    </td>
+</tr>                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+		</main>
+        <footer class="column">
+            Webdesign
+            und
+            Programmierung
+            MAXXmarketing GmbH
+        </footer>
+    </body>
+</html>

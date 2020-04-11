@@ -1,0 +1,84 @@
++ addon        - item
++ addon        - items
++ cart         - add
++ cart         - clear
++ cart         - delete
++ cart         - discount
++ cart         - info
++ cart         - update
++ category     - all
++ category     - item
++ category     - items
++ category     - tree
++ checkout     - step2
++ checkout     - step2save
++ checkout     - step3
++ checkout     - step3save
++ checkout     - step4
++ checkout     - step4save
++ checkout     - step5
++ checkout     - step5save
++ checkout     - step5save for PayPal PLUS and other non-standard payment systems
++ checkout     - stepNumber
++ checkout     - steps
++ connection   - open
++ connection   - info
++ connection   - user
++ connection   - close
++ content      - all
++ content      - cartReturnPolicy
++ content      - item
++ content      - items
++ content      - orderReturnPolicy
+- manufacturer - item
+- manufacturer - items
++ product      - group
++ product      - item
++ product      - items
+- product      - review
++ product      - search
++ product      - searchInfo
+- product      - getfile
+- product      - media
++ shop         - config
++ user         - activate
++ user         - cancelOrder
++ user         - changePassword
++ user         - create
++ user         - createInfo
++ user         - edit
++ user         - editInfo
++ user         - groups
++ user         - info
++ user         - login
++ user         - logout
++ user         - order
++ user         - orders
++ user         - ordersAll
+- vendor       - item
+- vendor       - items
++ wishlist     - add
++ wishlist     - clear
++ wishlist     - delete
++ wishlist     - discount
++ wishlist     - info
++ wishlist     - toCart
++ wishlist     - update
+
+
+
+RESTful API для сервера – делаем правильно (Часть 1)
+https://habrahabr.ru/post/144011
+
+Изучаем REST: Руководство по созданию RESTful сервиса
+http://www.restapitutorial.ru
+
+Как правильно хранить сессию при разработке JSON API?
+http://ru.stackoverflow.com/questions/566752/Как-правильно-хранить-сессию-при-разработке-json-api
+
+Объясните авторизацию Restful
+http://ru.stackoverflow.com/questions/297769/Объясните-авторизацию-restful
+
+
+
+addon_api_email@email.com  - addon_api_password

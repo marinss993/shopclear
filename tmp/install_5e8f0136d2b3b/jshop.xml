@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="quickicon" method="upgrade">
+	<name>plg_quickicon_jshop</name>	
+	<version>1.0.0</version>
+	<description>Joomshopping quick icon</description>
+	<files>
+		<filename plugin="jshop">jshop.php</filename>
+	</files>	
+</extension>

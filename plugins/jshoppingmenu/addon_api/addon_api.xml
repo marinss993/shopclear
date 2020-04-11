@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" method="upgrade" group="jshoppingmenu">
+    <name>JoomShopping - API</name>
+    <creationDate>23.02.2018</creationDate>
+    <author>MAXXmarketing GmbH</author>
+    <authorEmail>marketing@maxx-marketing.net</authorEmail>
+    <authorUrl>http://www.webdesigner-profi.de</authorUrl>
+    <copyright>Copyright (C) 2010 webdesigner-profi.de. All rights reserved.</copyright>
+    <license>Open Source License, GNU/GPL</license>
+    <version>1.0.1</version>
+    <description>JoomShopping - API plugin</description>
+    <files>
+        <filename plugin="addon_api">addon_api.php</filename>
+    </files>
+</extension>

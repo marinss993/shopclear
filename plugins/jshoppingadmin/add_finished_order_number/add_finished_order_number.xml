@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" method="upgrade" group="jshoppingadmin">
+	<name>JoomShopping Next finished order number</name>
+	<creationDate>07.11.2014</creationDate>
+	<version>1.0.0</version>
+	<author>MAXXmarketing</author>
+	<authorEmail>marketing@maxx-marketing.net</authorEmail>
+	<authorUrl>http://www.webdesigner-profi.de</authorUrl>
+	<copyright></copyright>
+	<license>2012. MAXXmarketing GmbH. All rights reserved.</license>
+	<description>Plugin to setting the next finished order number. Verify enabled plugin "next_finish_order_number".</description> 
+	
+	<files>
+		<filename>index.html</filename>
+		<filename plugin="add_finished_order_number">add_finished_order_number</filename>
+	</files>
+	
+</extension>

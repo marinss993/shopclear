@@ -1,0 +1,7 @@
+# @version      1.0.0 05.05.2017
+# @author       MAXXmarketing GmbH
+# @package      .htaccess
+# @copyright    Copyright (C) 2010 webdesigner-profi.de. All rights reserved.
+# @license      GNU/GPL
+
+Deny from all

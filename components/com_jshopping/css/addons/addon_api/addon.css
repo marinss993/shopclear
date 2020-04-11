@@ -1,0 +1,167 @@
+/*
+* @version      1.0.0 20.07.2018
+* @author       MAXXmarketing GmbH
+* @package      addon_api
+* @copyright    Copyright (C) 2010 webdesigner-profi.de. All rights reserved.
+* @license      GNU/GPL
+*/
+
+/* OVERALL A */
+.jshop_addon_api,
+.jshop_addon_api * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.jshop_addon_api .control-group .controls *,
+.jshop_addon_api input {
+    box-sizing: content-box;
+}
+
+.jshop_addon_api input,
+.jshop_addon_api select,
+.jshop_addon_api textarea {
+    padding: 4px 6px;
+}
+
+.jshop_addon_api li {
+    display: inline-block;
+    list-style: none;
+}
+
+.jshop_addon_api .jshop_buttons {
+    margin-top: 15px;
+}
+
+.jshop_addon_api .empty:before {
+    display: block;
+    content: '—';
+}
+/* OVERALL A */
+
+
+
+/* ADMIN A */
+.jshop_addon_api#adminForm table th,
+.jshop_addon_api#adminForm table td {
+    vertical-align: middle;
+}
+
+.jshop_addon_api#adminForm .table-striped tbody > tr:nth-child(2n+1) > td {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.jshop_addon_api#adminForm .table-striped tbody > tr:hover td,
+.jshop_addon_api#adminForm .table-striped tbody > tr:nth-child(2n+1):hover > td {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+.jshop_addon_api#adminForm .table-striped td a:hover img {
+    opacity: 0.9;
+}
+
+.jshop_addon_api#adminForm .jshop_block_filter {
+    text-align: right;
+}
+
+.jshop_addon_api#adminForm .jshop_block_filter > * {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0 10px 5px;
+    text-align: left;
+}
+
+.jshop_addon_api#adminForm .jshop_block_filter .filter-search #text_search {
+    box-sizing: content-box;
+}
+
+.jshop_addon_api#adminForm .jshop_block_filter .filter-search .btn {
+    border-radius: 0 3px 3px 0;
+    margin-left: -3px;
+}
+
+#adminForm  .control-group .controls {
+    display: block;
+}
+
+#adminForm  label {
+    display: inline-block;
+    max-width: 170px;
+}
+
+#adminForm  .subform-repeatable .btn.group-add,
+#adminForm  .subform-repeatable .subform-repeatable-group {
+    margin-left: 0;
+}
+
+#adminForm  .popover-content {
+    min-height: 0;
+}
+
+/* about A */
+.jshop_addon_api .about {
+    margin: 25px 10px;
+}
+
+.jshop_addon_api .about h1 {
+    font-size: 20px;
+    margin: 0 0 15px -10px;
+}
+
+.jshop_addon_api .about h1 span {
+    vertical-align: sub;
+}
+
+.jshop_addon_api .about .control-label {
+    padding-top: 0;
+}
+
+.jshop_addon_api .about .control-label label {
+    font-weight: bold;
+}
+/* about Z */
+
+/* log A */
+.jshop_addon_api .log .entry {
+    display: block;
+    padding: 10px 15px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.jshop_addon_api .log .entry:hover {
+    background: #F7F7F7;
+}
+
+.jshop_addon_api .log .entry .control-group {
+    margin-bottom: 5px;
+}
+
+.jshop_addon_api .log .entry .control-label {
+    font-weight: bold;
+}
+
+.jshop_addon_api .log .entry.e .message .controls {
+    color: red;
+}
+
+.jshop_addon_api .log .entry.m .message .controls {
+    color: green;
+}
+
+.jshop_addon_api .log .entry.n .message .controls {
+    color: steelblue;
+}
+
+.jshop_addon_api .log .entry.w .message .controls {
+    color: darkorange;
+}
+
+.jshop_addon_api .log .buttons {
+    margin: 0 0 10px 15px;
+}
+/* log Z */
+
+/* ADMIN Z */

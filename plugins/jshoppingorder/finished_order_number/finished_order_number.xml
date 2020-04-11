@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" method="upgrade" group="jshoppingcheckout">
+	<name>JoomShopping Plugin Change finished order number</name>
+	<creationDate>03.07.2014</creationDate>
+	<version>2.0.0</version>
+	<author>MAXXmarketing</author>
+	<authorEmail>marketing@maxx-marketing.net</authorEmail>
+	<authorUrl>http://www.webdesigner-profi.de</authorUrl>
+	<copyright></copyright>
+	<license>2014. MAXXmarketing GmbH. All rights reserved.</license>
+	<description>Plugin Change finished order number. </description> 
+	
+	<files>
+		<filename>index.html</filename>
+		<filename plugin="finished_order_number">finished_order_number.php</filename>
+	</files>
+	
+</extension>

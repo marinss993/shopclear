@@ -1,0 +1,337 @@
+/*
+* @version      1.0.3 01.11.2018
+* @author       MAXXmarketing GmbH
+* @package      addon_api
+* @copyright    Copyright (C) 2010 webdesigner-profi.de. All rights reserved.
+* @license      GNU/GPL
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+body {
+    max-width: 1130px;
+    margin: 0 auto;
+    line-height: 1.5rem;
+    box-shadow: 0 0 10px 0 #EEEEEE;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #0000EE;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+code {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border: 1px solid #EEEEEE;
+    background: #F7F7F7;
+    white-space: pre;
+    overflow: auto;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+li {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table tr:hover {
+    background: #F7F7F7;
+}
+
+table th {
+    background: #EEEFFF;
+}
+
+table th,
+table td {
+    padding: 5px 10px;
+}
+
+table th,
+table td {
+    border: 1px solid #EEEEEE;
+}
+
+[hidden] {
+    display: none;
+}
+
+body > header h1.column {
+    display: block;
+    margin-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: #EEEFFF;
+    color: #BD1E2D;
+}
+
+body > header h1.column span {
+    vertical-align: sub;
+}
+
+main {
+    position: relative; /* for menu */
+}
+
+main > * {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+}
+
+main > *:first-child {
+    width: 25%;
+    padding-right: 25px;
+}
+
+main menu {
+    position: fixed;
+}
+
+main menu ul ul {
+    margin-left: 1.5rem;
+}
+
+main menu ul li a {
+    display:inline-block;
+    max-width: 175px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1.25rem;
+}
+
+main menu a:hover,
+main menu .active > a {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+section section {
+    margin-bottom: 50px;
+}
+
+section section:last-of-type {
+    margin-bottom: 0;
+}
+
+section > div > *:last-child {
+    margin-bottom: 0;
+}
+
+section header {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+section section header {
+    font-size: 1.25rem;
+}
+
+section#version_history ul > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+section#version_history .version_and_date > * {
+    display: inline-block;
+    font-weight: bold;
+}
+
+section#version_history .changes {
+    list-style: disc inside;
+}
+
+section#version_history .changes li {
+    display: list-item;
+}
+
+section#request_parameters table {
+    text-align: center;
+}
+
+section#sections_and_tasks > div > table,
+section#sections_and_tasks section > table {
+    text-align: center;
+}
+
+section#sections_and_tasks table,
+section#sections_and_tasks section {
+    margin: 0;
+}
+
+section#sections_and_tasks > div > table > thead > tr > th:first-child,
+section#sections_and_tasks > div > section > table > tbody > tr > td:first-child {
+    width: 25%;
+}
+
+section#sections_and_tasks > div > table > thead > tr > th:nth-child(2),
+section#sections_and_tasks > div > section > table > tbody > tr > td:nth-child(2) {
+    width: 50%;
+    padding: 0;
+}
+
+section#sections_and_tasks .args {
+    margin: 0;
+}
+
+section#sections_and_tasks th .args tr:first-child th {
+    padding-bottom: 0;
+}
+
+section#sections_and_tasks .args th:first-child,
+section#sections_and_tasks .args td:first-child {
+    border-left: none;
+}
+
+section#sections_and_tasks .args th:last-child,
+section#sections_and_tasks .args td:last-child {
+    border-right: none;
+}
+
+section#sections_and_tasks .args tr:first-child th,
+section#sections_and_tasks .args tr:first-child td {
+    border-top: none;
+}
+
+section#sections_and_tasks .args tr:last-child th,
+section#sections_and_tasks .args tr:last-child td {
+    border-bottom: none;
+}
+
+section#sections_and_tasks table .details-btn {
+    cursor: pointer;
+}
+
+section#sections_and_tasks table .details-btn:hover {
+    color: #0000EE;
+}
+
+section#sections_and_tasks table .details-btn:before {
+    content: '▼';
+}
+
+section#sections_and_tasks table .details-btn.open:before {
+    content: '▲';
+}
+
+section#sections_and_tasks table .details {
+    display: none;
+    background: #FCFCFC;
+}
+
+section#sections_and_tasks table .details td {
+    padding: 25px;
+}
+
+section#sections_and_tasks table .details section {
+    margin-bottom: 20px;
+}
+
+section#sections_and_tasks table .details section .description table {
+    margin-top: 15px;
+}
+
+section#sections_and_tasks table .details section .description table:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+section#sections_and_tasks table .details section .description table td {
+    padding: 5px 10px;
+}
+
+section#formats table td:first-child,
+section#reports table td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    background: #EEEFFF;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.args th:nth-child(2),
+.args td:nth-child(2) {
+    width: 30%;
+}
+
+.args th:nth-child(3),
+.args td:nth-child(3) {
+    width: 16%;
+}
+
+.datatype {
+    font-style: italic;
+}
+
+.column {
+    padding: 0 25px;
+}
+
+.non-bordered tr,
+.non-bordered th,
+.non-bordered td {
+    border: none;
+}
+
+.red {
+    color: red;
+}
+
+.variable {
+    font-weight: bold;
+}
